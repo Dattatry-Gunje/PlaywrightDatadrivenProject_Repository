@@ -1,0 +1,9 @@
+status code 200
+status code OK
+{
+  id: 1003,
+  name: 'Rohan Verma',
+  email: 'rohan.verma@example.com',
+  gender: 'male',
+  status: 'inactive'
+}

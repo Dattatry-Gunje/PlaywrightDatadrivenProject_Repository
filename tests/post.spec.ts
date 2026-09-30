@@ -1,50 +1,81 @@
 import test, { expect } from "@playwright/test";
-import { request } from "http";
+// import { request } from "http";
 
 test('Create new user in gorest server',async({request})=>{
-    const response = await request.post('https://gorest.in/public/v2/users',{
+    const response = await request.post('https://gorest.co.in/public/v2/users',{
         headers:{
             'Accept': 'application/json',
             "Content-Type": "application/json",
             "Authorization":"Bearer 81134a7a3ec7dd0418f844b007f1f35480fc75515545d2b9dda77d9df7a44cbb"
             },
             data:{
+                // "name":"Rnaga",
+                // "email":"Rana@gmail.com",
+                // "gender":"Male",
+                // "status":"Active"
+
                 "name":"Rnaga",
-                "email":"Rana@gmail.com",
-                "gender":"Male",
-                "status":"Active"
+                "email":`Rana${Date.now()}@gmail.com`,
+                "gender":"male",
+                "status":"active"
+
+               
             }
     })
     
-    expect(response.status()).toBe(201)
-    expect(response.statusText()).toBe('Created')
-    console.log(`Status code ${response.status()}`)
-    console.log(`Status message ${response.statusText()}`)
-    //parse into json
-    const userdata = await response.json()
-    const userid = await userdata.id
-    const username = await userdata.name
-    const useremail = await userdata.email
-    console.log(`new user created ${username}`)
-    console.log(`new email created ${useremail}`)
-    console.log(`new UserID created ${userid}`)
-    console.log('-------------------------------------')
-    console.log(userdata)
+    // expect(response.status()).toBe(201)
+    // expect(response.statusText()).toBe('Created')
+    // console.log(`Status code ${response.status()}`)
+    // console.log(`Status message ${response.statusText()}`)
+
+    console.log(`Status code: ${response.status()}`);
+    console.log(`Status message: ${response.statusText()}`);
+    const userdata = await response.json();
+    console.log("BODY:", userdata);
+    expect(response.status()).toBe(201);
+    expect(response.statusText()).toBe('Created');
+    console.log(`New User ID: ${userdata.id}`);
+    console.log(`New User Name: ${userdata.name}`);
+    console.log(`New User Email: ${userdata.email}`);
+
+
+// console.log(`Status code ${response.status()}`)
+// console.log(`Status message ${response.statusText()}`)
+// console.log("BODY:", await response.text())
+// expect(response.status()).toBe(201)
+// expect(response.statusText()).toBe('Created')
+
+//     //parse into json
+//     const userdata = await response.json()
+//     const userid = await userdata.id
+//     const username = await userdata.name
+//     const useremail = await userdata.email
+//     console.log(`new user created ${username}`)
+//     console.log(`new email created ${useremail}`)
+//     console.log(`new UserID created ${userid}`)
+//     console.log('-------------------------------------')
+//     console.log(userdata)
 
 })
 
 test('Create new User in gorest server',async({request})=>{
-const resp = await request.post('https://gorest.in/public/v2/users',{
+const resp = await request.post('https://gorest.co.in/public/v2/users',{
 headers:{
 //'Accept': 'application/json',
 'Content-Type': 'application/json', 
 'Authorization': 'Bearer 81134a7a3ec7dd0418f844b007f1f35480fc75515545d2b9dda77d9df7a44cbb'
 },
 data:{
-"name":"Akhilesh",
-"email":"Ak678@test2.com",
-"gender":"male",
-"status":"active"
+// "name":"Akhilesh",
+// "email":"Ak678@test2.com",
+// "gender":"male",
+// "status":"active"
+
+    "name": "Akhilesh",
+    "email": `Ak${Date.now()}@test2.com`,
+    "gender": "male",
+    "status": "active"
+
 }
 
 })

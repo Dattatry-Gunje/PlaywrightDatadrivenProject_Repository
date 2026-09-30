@@ -1,0 +1,13 @@
+Status code 201
+Status message Created
+new user created Rnaga
+new email created Rana1@gmail.com
+new UserID created 8644474
+-------------------------------------
+{
+  id: 8644474,
+  name: 'Rnaga',
+  email: 'Rana1@gmail.com',
+  gender: 'male',
+  status: 'active'
+}
