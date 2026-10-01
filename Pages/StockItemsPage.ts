@@ -1,5 +1,5 @@
 import {Page,expect, Locator} from "@playwright/test"
-export class Stockpage{
+export class StockItemsPage{
     Page:Page
     readonly ClickStock:Locator
     readonly ClickAddIcon:Locator

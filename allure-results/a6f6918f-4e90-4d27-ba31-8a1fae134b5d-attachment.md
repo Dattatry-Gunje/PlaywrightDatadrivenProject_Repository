@@ -1,0 +1,135 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: ERPSingleData.spec.ts >> ERP Inventroy Management >> StockitemsPage With Single data
+- Location: tests\ERPSingleData.spec.ts:48:13
+
+# Error details
+
+```
+TypeError: _StockItemsPage.StockitemsPage is not a constructor
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=f2e2]:
+  - generic [ref=f2e3]:
+    - link "Stock Accounting" [ref=f2e6] [cursor=pointer]:
+      - /url: .
+    - strong [ref=f2e9]: Stock Accounting
+  - text:       
+  - generic [ref=f2e13]:
+    - list [ref=f2e14]:
+      - listitem [ref=f2e15]:
+        - link " Help (Categories)" [ref=f2e16] [cursor=pointer]:
+          - /url: help_categorieslist.php
+          - generic [ref=f2e17]: 
+          - text: Help (Categories)
+        - text:   
+      - listitem [ref=f2e19]:
+        - link " Login" [ref=f2e20] [cursor=pointer]:
+          - /url: login.php
+          - generic [ref=f2e21]: 
+          - text: Login
+    - list
+  - generic [ref=f2e24]:
+    - generic [ref=f2e27]:
+      - generic [ref=f2e28] [cursor=pointer]:
+        - radio "en" [checked]
+        - text: en
+      - generic [ref=f2e29] [cursor=pointer]:
+        - radio "id"
+        - text: id
+    - generic:  
+  - generic [ref=f2e32]:
+    - text: ©2015
+    - link "Masino Sinaga" [ref=f2e33] [cursor=pointer]:
+      - /url: http://www.ilovephpmaker.com
+    - text: . All rights reserved. |
+    - link "Terms and Conditions" [ref=f2e34] [cursor=pointer]:
+      - /url: javascript:void(0);
+    - text: "|"
+    - link "About Us" [ref=f2e35] [cursor=pointer]:
+      - /url: javascript:void(0);
+    - text: "|"
+    - link "Back to Top" [ref=f2e36] [cursor=pointer]:
+      - /url: javascript:void(0);
+```
+
+# Test source
+
+```ts
+  1  | import { test } from '../hooks/ERPHooks'
+  2  | import { SuppliersPage } from '../Pages/SuppliersPage';
+  3  | import { CustomersPage } from '../Pages/CustomersPage';
+  4  | import { StockitemsPage } from '../Pages/StockItemsPage';
+  5  | test.describe('ERP Inventroy Management',()=>{
+  6  |     // first test case for supplier module
+  7  |     test('Supplier With Single data',async({page})=>{
+  8  |         
+  9  |         const sup = new SuppliersPage(page)
+  10 |         await sup.NavigateToSupplier()
+  11 |         await sup.AddSupplierDeatils(
+  12 |             "Ramu",
+  13 |             "Hyd1",
+  14 |             "Hyderabad",
+  15 |             "India",
+  16 |             "QedgeTech",
+  17 |             "87654322",
+  18 |             "Test@gmail.com",
+  19 |             "986754321",
+  20 |             "New Supplier"
+  21 | 
+  22 |         )
+  23 |         await sup.handleAlerts()
+  24 |         await sup.supplierTable()
+  25 |     })
+  26 |     //----------------------customer module----------------------
+  27 |     test('Customer Module',async({page})=>{
+  28 |         //create object for customerpage file
+  29 |         const cus = new CustomersPage(page)
+  30 |         await cus.NavigateToCustomer()
+  31 |         await cus.AddcustomerDeatils(
+  32 |             'New Customer',
+  33 |             'Kadiri',
+  34 |             'atp',
+  35 |             'India',
+  36 |             'ranga',
+  37 |             '9876543432',
+  38 |             'Test2@gmail.com',
+  39 |             '87654321',
+  40 |             'Add new Customer'
+  41 |         )
+  42 |         await cus.handleAlerts()
+  43 |         await cus.customerTable()
+  44 | 
+  45 |     })
+  46 |    //----------------------Stockitem module----------------------
+  47 | 
+  48 |         test('StockitemsPage With Single data',async({page})=>{
+  49 |         //create object for Stockitempage file
+> 50 |         const stock = new StockitemsPage(page) 
+     |                       ^ TypeError: _StockItemsPage.StockitemsPage is not a constructor
+  51 |         await stock.NavigateToStock();
+  52 |         await stock.addStockDetails
+  53 |         (
+  54 |            'Electronics',
+  55 |            'SUP-1024',
+  56 |            'LED Monitor 24-inch',
+  57 |            'Piece',
+  58 |            '8500.00',
+  59 |            '10500.00',
+  60 |            'Latest model, 2-year warranty'
+  61 |         );
+  62 |         await stock.confirmDialog();
+  63 |         await stock.stockTable();
+  64 | 
+  65 |     })
+  66 | })
+```

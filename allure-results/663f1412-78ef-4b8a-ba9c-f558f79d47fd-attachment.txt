@@ -1,0 +1,12 @@
+status code is 201
+status Message is Created
+Created User with ID: 8645704
+Created User with email: Ak1790883252926@test2.com
+Created User with name: Akhilesh
+{
+  id: 8645704,
+  name: 'Akhilesh',
+  email: 'Ak1790883252926@test2.com',
+  gender: 'male',
+  status: 'active'
+}

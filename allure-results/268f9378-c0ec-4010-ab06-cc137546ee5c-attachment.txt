@@ -1,0 +1,2 @@
+URL: http://webapp.qedgetech.com/a_stock_itemsadd.php?showdetail=
+CATEGORY: [ '\nPlease select' ]

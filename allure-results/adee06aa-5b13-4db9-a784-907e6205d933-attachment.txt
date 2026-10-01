@@ -1,0 +1,12 @@
+Status code: 201
+Status message: Created
+BODY: {
+  id: 8645703,
+  name: 'Rnaga',
+  email: 'Rana1790883189030@gmail.com',
+  gender: 'male',
+  status: 'active'
+}
+New User ID: 8645703
+New User Name: Rnaga
+New User Email: Rana1790883189030@gmail.com

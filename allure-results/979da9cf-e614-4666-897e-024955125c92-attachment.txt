@@ -1,0 +1,2 @@
+1. NavigateToStock
+2. addStockDetails
