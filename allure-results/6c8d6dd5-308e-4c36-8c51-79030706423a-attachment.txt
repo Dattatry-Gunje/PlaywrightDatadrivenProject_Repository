@@ -1,0 +1,11 @@
+Total Links Found: 10
+Skipping invalid/relative URL: #main
+Valid Link: https://practice-automation.com/ (Status: 200)
+Valid Link: https://automatenow.io/ (Status: 200)
+Valid Link: https://practice-automation.com/ (Status: 200)
+Broken Link: https://practice-automation.com/broken-links/missing-page.html (Status: 404)
+Valid Link: https://automatenow.io/http-response-codes-in-api-testing/ (Status: 200)
+Valid Link: https://linktr.ee/automateNow (Status: 200)
+Valid Link: https://automatenow.io/about/ (Status: 200)
+Skipping invalid/relative URL: #body
+Skipping invalid/relative URL: /broken-links/
